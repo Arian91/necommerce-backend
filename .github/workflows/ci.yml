@@ -14,7 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Gradle Dependency Submission
-        uses: mikepenz/gradle-dependency-submission@v0.8.6
+        uses: mikepenz/gradle-dependency-submission@{latest}
+        
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v2
         with:
