@@ -10,11 +10,13 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-
+    permissions: # The Dependency Submission API requires write permission
+     contents: write
+    
     steps:
       - uses: actions/checkout@v2
       - name: Gradle Dependency Submission
-        uses: mikepenz/gradle-dependency-submission@0.8.5
+        uses: mikepenz/gradle-dependency-submission@v0.8.5
         
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v2
